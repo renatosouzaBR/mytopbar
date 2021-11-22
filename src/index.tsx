@@ -1,7 +1,21 @@
 import React from "react";
 
-const SayHello = ({ name }: { name: string }): JSX.Element => (
-  <div>Hey {name}, say hello to TypeScript.</div>
-);
+import { Styles } from "./styles";
 
-export default SayHello;
+interface Props {
+  backgroundColor: string;
+  height: number;
+  maxWidth: number;
+}
+
+export const MyTopbar: React.FC<Props> = ({
+  backgroundColor,
+  height,
+  maxWidth,
+}) => {
+  return (
+    <Styles.Container bgColor={backgroundColor} height={height}>
+      <Styles.Content maxWidth={maxWidth}>Topbar</Styles.Content>
+    </Styles.Container>
+  );
+};

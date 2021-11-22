@@ -1,13 +1,5 @@
-import React from "react";
-import SayHello from "mytopbar";
-import "./App.css";
+import { MyTopbar } from "mytopbar";
 
-function App() {
-  return (
-    <div className="App">
-      <SayHello name="Prateek" />
-    </div>
-  );
+export function App() {
+  return <MyTopbar backgroundColor="#ef4" height={60} maxWidth={1366} />;
 }
-
-export default App;
