@@ -2,8 +2,15 @@
   "name": "mytopbar",
   "version": "1.0.0",
   "description": "Topbar customizavel para lançamento rapido ",
-  "main": "index.js",
   "license": "MIT",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "types": "./lib/esm/index.d.ts",
+  "scripts": {
+    "build": "yarn build:esm && yarn build:cjs",
+    "build:esm": "tsc",
+    "build:cjs": "tsc --module commonjs --outDir lib/cjs"
+  },
   "devDependencies": {
     "typescript": "^4.5.2"
   }
