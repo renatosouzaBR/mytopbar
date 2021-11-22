@@ -1,0 +1,10 @@
+{
+  "name": "mytopbar",
+  "version": "1.0.0",
+  "description": "Topbar customizavel para lançamento rapido ",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^4.5.2"
+  }
+}
