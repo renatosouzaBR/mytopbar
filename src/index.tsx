@@ -1,6 +1,5 @@
 import React from "react";
-
-import { Styles } from "./styles";
+import "./style.css";
 
 interface Props {
   backgroundColor: string;
@@ -8,14 +7,18 @@ interface Props {
   maxWidth: number;
 }
 
-export const MyTopbar: React.FC<Props> = ({
+export const MyTopbar = ({
   backgroundColor,
   height,
   maxWidth,
-}) => {
+}: Props): JSX.Element => {
+  console.log(backgroundColor);
+  console.log(height);
+  console.log(maxWidth);
+
   return (
-    <Styles.Container bgColor={backgroundColor} height={height}>
-      <Styles.Content maxWidth={maxWidth}>Topbar</Styles.Content>
-    </Styles.Container>
+    <div id="container">
+      <div>Topbar</div>
+    </div>
   );
 };
