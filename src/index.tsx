@@ -2,16 +2,19 @@ import React, { CSSProperties } from "react";
 import "./styles.css";
 
 interface Props {
-  backgroundColor: string;
-  height: number;
-  maxWidth: number;
+  viewOptions: {
+    bgColor: string;
+    height: number;
+    maxWidth: number;
+  };
+
+  logo: {
+    SvgFullLogo: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+    SvgCompactLogo: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
+  };
 }
 
-export const MyTopbar = ({
-  backgroundColor,
-  height,
-  maxWidth,
-}: Props): JSX.Element => {
+export const MyTopbar = ({ viewOptions, logo }: Props): JSX.Element => {
   const contentStyle = (maxWidth: number): CSSProperties => ({
     maxWidth,
   });
@@ -22,9 +25,18 @@ export const MyTopbar = ({
   });
 
   return (
-    <div id="container" style={containerStyles(height, backgroundColor)}>
-      <div id="content" style={contentStyle(maxWidth)}>
-        Topbar
+    <div
+      id="container"
+      style={containerStyles(viewOptions.height, viewOptions.bgColor)}
+    >
+      <div id="content" style={contentStyle(viewOptions.maxWidth)}>
+        <div id="logo">
+          <logo.SvgFullLogo id="full-logo" />
+          <logo.SvgCompactLogo id="compact-logo" />
+        </div>
+
+        <div id="menu">Menu</div>
+        <div id="options">Options</div>
       </div>
     </div>
   );

@@ -1,10 +1,54 @@
 div#container {
   display: flex;
   justify-content: center;
+
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.25);
 }
 
 div#content {
-  background-color: #fff;
-  width: 100%;
+  background-color: transparent;
+  width: 96%;
   height: 100%;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+div#logo {
+  width: 140px;
+}
+
+svg#full-logo {
+  display: block;
+  height: 30px;
+  width: 100%;
+}
+
+svg#compact-logo {
+  display: none;
+  height: 20px;
+  width: 100%;
+}
+
+@media screen and (max-width: 960px) {
+  div#menu {
+    order: 0;
+  }
+
+  div#logo {
+    order: 1;
+  }
+
+  div#options {
+    order: 3;
+  }
+
+  svg#full-logo {
+    display: none;
+  }
+
+  svg#compact-logo {
+    display: block;
+  }
 }
