@@ -1,0 +1,15 @@
+div#logo {
+  width: 140px;
+}
+
+svg#full-logo {
+  display: block;
+  height: 30px;
+  width: 100%;
+}
+
+svg#compact-logo {
+  display: none;
+  height: 20px;
+  width: 100%;
+}

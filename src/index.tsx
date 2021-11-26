@@ -1,5 +1,18 @@
 import React, { CSSProperties } from "react";
 import "./styles.css";
+import "./responsive.css";
+
+import { LogoContent } from "./LogoContent";
+import { MenuContent } from "./MenuContent";
+
+interface Submenu {
+  label: string;
+}
+
+interface Menu {
+  label: string;
+  submenu?: Submenu[];
+}
 
 interface Props {
   viewOptions: {
@@ -12,9 +25,11 @@ interface Props {
     SvgFullLogo: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
     SvgCompactLogo: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
   };
+
+  menu: Menu[];
 }
 
-export const MyTopbar = ({ viewOptions, logo }: Props): JSX.Element => {
+export const MyTopbar = ({ viewOptions, logo, menu }: Props): JSX.Element => {
   const contentStyle = (maxWidth: number): CSSProperties => ({
     maxWidth,
   });
@@ -30,12 +45,10 @@ export const MyTopbar = ({ viewOptions, logo }: Props): JSX.Element => {
       style={containerStyles(viewOptions.height, viewOptions.bgColor)}
     >
       <div id="content" style={contentStyle(viewOptions.maxWidth)}>
-        <div id="logo">
-          <logo.SvgFullLogo id="full-logo" />
-          <logo.SvgCompactLogo id="compact-logo" />
-        </div>
+        <LogoContent logo={logo} />
 
-        <div id="menu">Menu</div>
+        <MenuContent menu={menu} />
+
         <div id="options">Options</div>
       </div>
     </div>

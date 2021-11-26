@@ -1,0 +1,36 @@
+ul#menu {
+  list-style-type: none;
+  position: relative;
+
+  display: flex;
+  gap: 10px;
+}
+
+ul#menu li {
+  padding: 10px 20px;
+
+  cursor: pointer;
+}
+
+ul#menu li:hover {
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+ul.submenu li:hover {
+  border-left: 4px solid rgba(0, 0, 0, 0.2);
+}
+
+li.menu-hover:hover > ul {
+  display: block;
+}
+
+ul.submenu {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 100%;
+
+  background-color: #fff;
+  list-style-type: none;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+}
