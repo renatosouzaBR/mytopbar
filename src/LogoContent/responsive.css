@@ -1,0 +1,9 @@
+@media screen and (max-width: 960px) {
+  svg#full-logo {
+    display: none;
+  }
+
+  svg#compact-logo {
+    display: block;
+  }
+}

@@ -10,12 +10,4 @@
   div#options {
     order: 3;
   }
-
-  svg#full-logo {
-    display: none;
-  }
-
-  svg#compact-logo {
-    display: block;
-  }
 }
