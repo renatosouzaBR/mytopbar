@@ -1,0 +1,12 @@
+@media screen and (max-width: 960px) {
+  ul#menu {
+    display: none;
+  }
+
+  svg#hamburger-icon {
+    display: block;
+    width: 22px;
+
+    cursor: pointer;
+  }
+}

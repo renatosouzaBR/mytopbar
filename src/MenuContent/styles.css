@@ -1,3 +1,7 @@
+svg#hamburger-icon {
+  display: none;
+}
+
 ul#menu {
   list-style-type: none;
   position: relative;
