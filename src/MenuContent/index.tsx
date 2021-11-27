@@ -1,19 +1,8 @@
 import React from "react";
 import "./styles.css";
+import { MenuContentProps } from "./types";
 
-interface Submenu {
-  label: string;
-}
-
-interface Menu {
-  label: string;
-  submenu?: Submenu[];
-}
-
-interface Props {
-  menu: Menu[];
-}
-export const MenuContent: React.FC<Props> = ({ menu }) => {
+export const MenuContent: React.FC<MenuContentProps> = ({ menu }) => {
   return (
     <ul id="menu">
       {menu.map((item) => {

@@ -1,14 +1,8 @@
 import React from "react";
 import "./styles.css";
+import { LogoContentProps } from "./types";
 
-interface Props {
-  logo: {
-    SvgFullLogo: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-    SvgCompactLogo: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  };
-}
-
-export const LogoContent: React.FC<Props> = ({ logo }) => {
+export const LogoContent: React.FC<LogoContentProps> = ({ logo }) => {
   return (
     <div id="logo">
       <logo.SvgFullLogo id="full-logo" />

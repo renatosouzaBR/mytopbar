@@ -4,29 +4,15 @@ import "./responsive.css";
 
 import { LogoContent } from "./LogoContent";
 import { MenuContent } from "./MenuContent";
+import { LogoContentProps } from "./LogoContent/types";
+import { MenuContentProps } from "./MenuContent/types";
 
-interface Submenu {
-  label: string;
-}
-
-interface Menu {
-  label: string;
-  submenu?: Submenu[];
-}
-
-interface Props {
+interface Props extends LogoContentProps, MenuContentProps {
   viewOptions: {
     bgColor: string;
     height: number;
     maxWidth: number;
   };
-
-  logo: {
-    SvgFullLogo: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-    SvgCompactLogo: React.FunctionComponent<React.SVGProps<SVGSVGElement>>;
-  };
-
-  menu: Menu[];
 }
 
 export const MyTopbar = ({ viewOptions, logo, menu }: Props): JSX.Element => {
