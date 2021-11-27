@@ -8,10 +8,18 @@ export const App: React.FC = () => {
   const menuItems = [
     {
       label: "Cadastro",
-      submenu: [{ label: "Cliente" }, { label: "Produtos" }],
+      submenu: [
+        { label: "Cliente" },
+        { label: "Produtos", onClick: () => alert("Clicou") },
+      ],
+      style: {
+        textColor: "#ef4",
+        borderColor: "#000",
+      },
     },
     {
       label: "Financeiro",
+      onClick: () => alert("Clicou"),
     },
     {
       label: "Produtos",
