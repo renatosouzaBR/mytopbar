@@ -6,6 +6,7 @@ import { LogoContent } from "./LogoContent";
 import { MenuContent } from "./MenuContent";
 import { LogoContentProps } from "./LogoContent/types";
 import { MenuContentProps } from "./MenuContent/types";
+import { UserMenu } from "./UserMenu";
 
 interface Props extends LogoContentProps, MenuContentProps {
   viewOptions: {
@@ -35,7 +36,7 @@ export const MyTopbar = ({ viewOptions, logo, menu }: Props): JSX.Element => {
 
         <MenuContent menu={menu} />
 
-        <div id="options">Options</div>
+        <UserMenu />
       </div>
     </div>
   );

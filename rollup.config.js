@@ -5,6 +5,7 @@ import typescript from "rollup-plugin-typescript2";
 import postcss from "rollup-plugin-postcss";
 import svgr from "@svgr/rollup";
 import url from "@rollup/plugin-url";
+import copy from "rollup-plugin-copy-assets";
 
 const packageJson = require("./package.json");
 
@@ -22,6 +23,7 @@ export default {
       sourcemap: true,
     },
   ],
+  external: Object.keys(packageJson.peerDependencies || {}),
   plugins: [
     peerDepsExternal(),
     resolve(),
@@ -32,5 +34,8 @@ export default {
     }),
     url(),
     svgr(),
+    copy({
+      assets: ["src/assets"],
+    }),
   ],
 };
