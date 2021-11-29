@@ -1,5 +1,10 @@
 interface Submenu {
   label: string;
+  style?: {
+    textColor: string;
+    borderColor: string;
+  };
+
   onClick?: () => void;
 }
 
@@ -10,9 +15,10 @@ interface Menu {
     textColor: string;
     borderColor: string;
   };
+
   onClick?: () => void;
 }
 
-export interface MenuContentProps {
+export interface MenuProps {
   menu: Menu[];
 }

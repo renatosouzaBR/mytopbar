@@ -3,12 +3,12 @@ import "./styles.css";
 import "./responsive.css";
 
 import { LogoContent } from "./LogoContent";
-import { MenuContent } from "./MenuContent";
+import { Menu } from "./Menu";
 import { LogoContentProps } from "./LogoContent/types";
-import { MenuContentProps } from "./MenuContent/types";
+import { MenuProps } from "./Menu/types";
 import { UserMenu } from "./UserMenu";
 
-interface Props extends LogoContentProps, MenuContentProps {
+interface Props extends LogoContentProps, MenuProps {
   viewOptions: {
     bgColor: string;
     height: number;
@@ -34,7 +34,7 @@ export const MyTopbar = ({ viewOptions, logo, menu }: Props): JSX.Element => {
       <div id="content" style={contentStyle(viewOptions.maxWidth)}>
         <LogoContent logo={logo} />
 
-        <MenuContent menu={menu} />
+        <Menu menu={menu} />
 
         <UserMenu />
       </div>

@@ -9,7 +9,7 @@ export const App: React.FC = () => {
     {
       label: "Cadastro",
       submenu: [
-        { label: "Cliente" },
+        { label: "Cliente", style: { textColor: "#5ef", borderColor: "#5ef" } },
         { label: "Produtos", onClick: () => alert("Clicou") },
       ],
       style: {
