@@ -12,10 +12,6 @@ export const App: React.FC = () => {
         { label: "Cliente", style: { textColor: "#5ef", borderColor: "#5ef" } },
         { label: "Produtos", onClick: () => alert("Clicou") },
       ],
-      style: {
-        textColor: "#ef4",
-        borderColor: "#000",
-      },
     },
     {
       label: "Financeiro",

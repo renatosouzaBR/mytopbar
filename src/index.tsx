@@ -3,9 +3,9 @@ import "./styles.css";
 import "./responsive.css";
 
 import { LogoContent } from "./LogoContent";
-import { Menu } from "./Menu";
+import { MenuComponent } from "./components/Menu";
 import { LogoContentProps } from "./LogoContent/types";
-import { MenuProps } from "./Menu/types";
+import { MenuProps } from "./components/Menu/types";
 import { UserMenu } from "./UserMenu";
 
 interface Props extends LogoContentProps, MenuProps {
@@ -34,7 +34,7 @@ export const MyTopbar = ({ viewOptions, logo, menu }: Props): JSX.Element => {
       <div id="content" style={contentStyle(viewOptions.maxWidth)}>
         <LogoContent logo={logo} />
 
-        <Menu menu={menu} />
+        <MenuComponent menu={menu} />
 
         <UserMenu />
       </div>
