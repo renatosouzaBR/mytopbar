@@ -8,8 +8,16 @@ export const useMenuStyles = () => {
     }
   `;
 
-  const MenuList = styled.ul<{ show?: boolean }>`
+  const MenuList = styled.ul<{
+    show?: boolean;
+    bgColor?: string;
+    textColor?: string;
+    textSize?: string;
+    closeButtonColor?: string;
+  }>`
     display: ${(props) => (props.show ? "flex" : "none")};
+    background-color: ${(props) => (props.bgColor ? props.bgColor : "#fff")};
+
     list-style-type: none;
 
     position: absolute;
@@ -24,13 +32,29 @@ export const useMenuStyles = () => {
     padding: 120px 0;
 
     svg#close-icon {
-      fill: #c5c5c5;
+      fill: ${(props) =>
+        props.closeButtonColor ? props.closeButtonColor : "#c5c5c5"};
 
       position: absolute;
       right: 32px;
       top: 32px;
 
       cursor: pointer;
+    }
+
+    ul {
+      background-color: ${(props) => (props.bgColor ? props.bgColor : "#fff")};
+    }
+
+    svg {
+      fill: ${(props) => (props.textColor ? props.textColor : "#c5c5c5")};
+    }
+
+    li,
+    span {
+      color: ${(props) => (props.textColor ? props.textColor : "#000")};
+      font-size: ${(props) => (props.textSize ? props.textSize : "20px")};
+      font-weight: 600;
     }
   `;
 
@@ -40,19 +64,14 @@ export const useMenuStyles = () => {
     align-items: center;
 
     width: 260px;
-
-    svg {
-      fill: #c5c5c5;
-    }
   `;
 
-  const MenuItem = styled.li<{ color?: string; borderColor?: string }>`
+  const MenuItem = styled.li`
     padding: 10px 20px;
     flex-direction: row;
     width: 220px;
 
     cursor: pointer;
-    color: ${(props) => props?.color};
   `;
 
   return {

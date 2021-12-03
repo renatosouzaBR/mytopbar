@@ -18,12 +18,10 @@ export const useSubmenuStyles = () => {
     list-style-type: none;
   `;
 
-  const SubmenuItem = styled.li<{ color?: string; borderColor?: string }>`
+  const SubmenuItem = styled.li`
     padding: 10px 20px;
     width: 220px;
     cursor: pointer;
-
-    color: ${(props) => props?.color};
   `;
 
   const Header = styled.div`
@@ -42,7 +40,10 @@ export const useSubmenuStyles = () => {
     }
   `;
 
-  const HeaderText = styled.div``;
+  const HeaderText = styled.span`
+    font-size: 20px;
+    font-weight: 700;
+  `;
 
   return {
     SubmenuList,

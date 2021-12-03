@@ -5,28 +5,25 @@ import { ReactComponent as FullLogo } from "./assets/logo.svg";
 import { ReactComponent as CompactLogo } from "./assets/compact-logo.svg";
 
 export const App: React.FC = () => {
-  const menuItems = [
-    {
-      label: "Cadastro",
-      submenu: [
-        { label: "Cliente", style: { textColor: "#5ef", borderColor: "#5ef" } },
-        { label: "Produtos", onClick: () => alert("Clicou") },
-      ],
-    },
-    {
-      label: "Financeiro",
-      onClick: () => alert("Clicou"),
-    },
-    {
-      label: "Produtos",
-    },
-  ];
-
   return (
     <MyTopbar
       viewOptions={{ bgColor: "#fff", height: 60, maxWidth: 1366 }}
       logo={{ SvgFullLogo: FullLogo, SvgCompactLogo: CompactLogo }}
-      menu={menuItems}
+      menu={{
+        bgColor: "#37AD8C",
+        textColor: "#fff",
+        textSize: "24px",
+        closeButtonColor: "#fff",
+
+        items: [
+          {
+            label: "Cadastros",
+            submenu: [{ label: "Clientes" }, { label: "Produtos" }],
+          },
+          { label: "Financeiro" },
+          { label: "Estoque" },
+        ],
+      }}
     />
   );
 };

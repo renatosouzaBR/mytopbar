@@ -10,7 +10,7 @@ import { SubmenuComponent } from "../Submenu";
 export const MenuComponent: React.FC<MenuProps> = ({ menu }) => {
   const { Container, MenuList, MenuItem, MenuItemButton } = useMenuStyles();
 
-  const [showMenu, setShowMenu] = useState(true);
+  const [showMenu, setShowMenu] = useState(false);
   const [submenuLabel, setSubmenuLabel] = useState("");
 
   function handleOpenCloseMenu() {
@@ -22,10 +22,16 @@ export const MenuComponent: React.FC<MenuProps> = ({ menu }) => {
     <Container>
       <HamburgerIcon id="hamburger-icon" onClick={handleOpenCloseMenu} />
 
-      <MenuList show={showMenu}>
+      <MenuList
+        show={showMenu}
+        bgColor={menu.bgColor}
+        textColor={menu.textColor}
+        textSize={menu.textSize}
+        closeButtonColor={menu.closeButtonColor}
+      >
         <CloseIcon id="close-icon" onClick={handleOpenCloseMenu} />
 
-        {menu.map((item) => (
+        {menu.items.map((item) => (
           <MenuItemButton key={item.label}>
             <MenuItem onClick={() => setSubmenuLabel(item.label)}>
               {item.label}

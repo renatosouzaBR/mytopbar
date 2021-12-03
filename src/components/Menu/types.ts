@@ -1,24 +1,21 @@
-interface Submenu {
-  label: string;
-  style?: {
-    textColor: string;
-    borderColor: string;
-  };
+import { Submenu } from "../Submenu/types";
 
+interface MenuItem {
+  label: string;
+  submenu?: Submenu[];
   onClick?: () => void;
 }
 
 interface Menu {
-  label: string;
-  submenu?: Submenu[];
-  style?: {
-    textColor: string;
-    borderColor: string;
-  };
+  bgColor?: string;
+  textColor?: string;
+  textSize?: string;
+  borderColor?: string;
+  closeButtonColor?: string;
 
-  onClick?: () => void;
+  items: MenuItem[];
 }
 
 export interface MenuProps {
-  menu: Menu[];
+  menu: Menu;
 }
