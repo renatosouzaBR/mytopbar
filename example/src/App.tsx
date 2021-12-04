@@ -14,6 +14,7 @@ export const App: React.FC = () => {
         textColor: "#fff",
         textSize: "18px",
         closeButtonColor: "#fff",
+        hamburgerIconColor: "#fff",
 
         items: [
           {

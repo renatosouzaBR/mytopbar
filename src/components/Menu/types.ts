@@ -12,6 +12,7 @@ interface Menu {
   textSize?: string;
   borderColor?: string;
   closeButtonColor?: string;
+  hamburgerIconColor?: string;
 
   items: MenuItem[];
 }

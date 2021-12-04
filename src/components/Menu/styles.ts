@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
 export const useMenuStyles = () => {
-  const Container = styled.div`
+  const Container = styled.div<{ hamburgerIconColor?: string }>`
     svg#hamburger-icon {
       width: 22px;
       cursor: pointer;
+
+      color: ${(props) =>
+        props.hamburgerIconColor ? props.hamburgerIconColor : "#00000090"};
     }
 
     /* Responsividade */

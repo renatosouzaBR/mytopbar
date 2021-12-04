@@ -19,7 +19,7 @@ export const MenuComponent: React.FC<MenuProps> = ({ menu }) => {
   }
 
   return (
-    <Container>
+    <Container hamburgerIconColor={menu.hamburgerIconColor}>
       <HamburgerIcon id="hamburger-icon" onClick={handleOpenCloseMenu} />
 
       <MenuList
