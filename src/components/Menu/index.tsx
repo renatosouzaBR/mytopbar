@@ -39,8 +39,9 @@ export const MenuComponent: React.FC<MenuProps> = ({ menu }) => {
 
             {item.submenu && <ArrowRightIcon />}
 
-            {item.submenu && item.label === submenuLabel && (
+            {item.submenu && (
               <SubmenuComponent
+                show={window.innerWidth > 960 || item.label === submenuLabel}
                 id={item.label}
                 data={item.submenu}
                 closeMenu={handleOpenCloseMenu}

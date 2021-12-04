@@ -9,6 +9,7 @@ import { Submenu } from "./types";
 interface Props {
   id: string;
   data: Submenu[];
+  show: boolean;
   closeMenu: () => void;
   closeSubmenu: () => void;
 }
@@ -16,16 +17,19 @@ interface Props {
 export const SubmenuComponent: React.FC<Props> = ({
   data,
   id,
+  show,
   closeMenu,
   closeSubmenu,
 }) => {
   const { SubmenuList, SubmenuItem, Header, HeaderText } = useSubmenuStyles();
 
+  if (!show) return null;
+
   return (
     <SubmenuList id={id}>
       <CloseIcon id="close-icon" onClick={closeMenu} />
 
-      <Header onClick={closeSubmenu}>
+      <Header id="submenu-header" onClick={closeSubmenu}>
         <ArrowRightIcon />
         <HeaderText>{id}</HeaderText>
       </Header>

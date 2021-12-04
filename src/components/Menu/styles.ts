@@ -6,6 +6,75 @@ export const useMenuStyles = () => {
       width: 22px;
       cursor: pointer;
     }
+
+    @media screen and (min-width: 961px) {
+      svg#hamburger-icon {
+        display: none;
+      }
+
+      > ul {
+        display: flex;
+        height: auto;
+        width: auto;
+
+        position: relative;
+        flex-direction: row;
+        justify-content: center;
+        padding: 0;
+        gap: 14px;
+
+        svg {
+          display: none;
+        }
+
+        > div {
+          width: auto;
+
+          > li {
+            width: auto;
+            padding: 4px 10px;
+          }
+
+          ul {
+            display: none;
+            top: 100%;
+            width: auto;
+            height: auto;
+
+            padding: 0;
+            align-items: flex-start;
+
+            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 2px;
+
+            div#submenu-header {
+              display: none;
+            }
+
+            li {
+              width: auto;
+
+              :hover {
+                padding: 10px 20px 10px 14px;
+                border-left: 6px solid #fff;
+              }
+            }
+          }
+
+          :hover {
+            border-bottom: 2px solid #fff;
+
+            > li {
+              padding: 4px 10px 2px 10px;
+            }
+
+            > ul {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
   `;
 
   const MenuList = styled.ul<{
@@ -21,7 +90,7 @@ export const useMenuStyles = () => {
     list-style-type: none;
 
     position: absolute;
-    top: 100%;
+    top: 101%;
     left: 0;
 
     width: 100%;
