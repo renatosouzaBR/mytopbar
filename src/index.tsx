@@ -2,13 +2,13 @@ import React, { CSSProperties } from "react";
 import "./styles.css";
 import "./responsive.css";
 
-import { LogoContent } from "./LogoContent";
+import { Logo } from "./components/Logo";
 import { MenuComponent } from "./components/Menu";
-import { LogoContentProps } from "./LogoContent/types";
+import { LogoProps } from "./components/Logo/types";
 import { MenuProps } from "./components/Menu/types";
-import { UserMenu } from "./UserMenu";
+import { UserMenu } from "./components/UserMenu";
 
-interface Props extends LogoContentProps, MenuProps {
+interface Props extends LogoProps, MenuProps {
   viewOptions: {
     bgColor: string;
     height: number;
@@ -32,7 +32,7 @@ export const MyTopbar = ({ viewOptions, logo, menu }: Props): JSX.Element => {
       style={containerStyles(viewOptions.height, viewOptions.bgColor)}
     >
       <div id="content" style={contentStyle(viewOptions.maxWidth)}>
-        <LogoContent logo={logo} />
+        <Logo logo={logo} />
 
         <MenuComponent menu={menu} />
 

@@ -7,6 +7,7 @@ export const useMenuStyles = () => {
       cursor: pointer;
     }
 
+    /* Responsividade */
     @media screen and (min-width: 961px) {
       svg#hamburger-icon {
         display: none;
@@ -75,6 +76,7 @@ export const useMenuStyles = () => {
         }
       }
     }
+    /* Responsividade */
   `;
 
   const MenuList = styled.ul<{

@@ -1,11 +1,11 @@
 div#logo {
-  width: 140px;
+  width: auto;
 }
 
 svg#full-logo {
   display: block;
   height: 30px;
-  width: 100%;
+  width: 140px;
 }
 
 svg#compact-logo {
