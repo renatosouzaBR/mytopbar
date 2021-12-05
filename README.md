@@ -8,8 +8,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/renatosouzaBR/mytopbar/tree/master/example/src/assets/logo.svg">
-    <img src="https://github.com/renatosouzaBR/mytopbar/tree/master/example/src/assets/logo.svg" alt="Logo" width="140" height="80">
+  <a href="https://github.com/renatosouzaBR/mytopbar/tree/master/example/src">
+    <img src="assets/logo.svg" alt="Logo">
   </a>
 
   <p align="center">
@@ -144,7 +144,7 @@ export const App = () => {
 - [ ] Adicionar props children para cada componente (logo, menu, menu avatar) para ser possível substituir toda a implementação de cada parte da topbar.
 - [ ] Adicionar testes
 
-Veja as [qeustões abertas](https://github.com/renatosouzaBR/mytopbar/issues) para uma lista completa de recursos propostos e problemas conhecidos.
+Veja as [questões abertas](https://github.com/renatosouzaBR/mytopbar/issues) para uma lista completa de recursos propostos e problemas conhecidos.
 
 <p align="right">(<a href="#top">voltar ao topo</a>)</p>
 
