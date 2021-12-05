@@ -8,8 +8,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/renatosouzaBR/mytopbar/tree/master/example/src">
-    <img src="assets/logo.svg" alt="Logo" width="140" height="80">
+  <a href="https://github.com/renatosouzaBR/mytopbar/tree/master/example/src/assets/logo.svg">
+    <img src="https://github.com/renatosouzaBR/mytopbar/tree/master/example/src/assets/logo.svg" alt="Logo" width="140" height="80">
   </a>
 
   <p align="center">
