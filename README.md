@@ -9,7 +9,7 @@
 <br />
 <div align="center">
   <p align="center">
-    <a href="https://github.com/renatosouzaBR/mytopbar" target="blank"><img src="example/src/assets/logo.svg" width="140" alt="Mytopbar logo" /></a>
+    <a href="https://github.com/renatosouzaBR/mytopbar" target="blank"><img src="example/src/assets/logo.svg" width="180" alt="Mytopbar logo" /></a>
   </p>
 
   <p align="center">
