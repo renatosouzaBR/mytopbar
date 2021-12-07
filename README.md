@@ -197,7 +197,7 @@ SOFTWARE.
 
 ## Contatos
 
-Renato Souza - [Linkedin](www.linkedin.com/in/renato-alves-de-souza-33422772) - natoicm@gmail.com
+Renato Souza - [Linkedin](linkedin.com/in/renato-souza-33422772) - natoicm@gmail.com
 
 GitHub: [https://github.com/renatosouzaBR](https://github.com/renatosouzaBR)
 
