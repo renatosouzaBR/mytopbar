@@ -7,12 +7,12 @@ interface MenuItem {
 }
 
 interface Menu {
-  bgColor?: string;
-  textColor?: string;
-  textSize?: string;
-  borderColor?: string;
-  closeButtonColor?: string;
-  hamburgerIconColor?: string;
+  bgColor: string;
+  textColor: string;
+  textSize: string;
+  borderColor: string;
+  closeButtonColor: string;
+  hamburgerIconColor: string;
 
   items: MenuItem[];
 }

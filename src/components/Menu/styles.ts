@@ -1,7 +1,10 @@
 import styled from "styled-components";
 
 export const useMenuStyles = () => {
-  const Container = styled.div<{ hamburgerIconColor?: string }>`
+  const Container = styled.div<{
+    hamburgerIconColor: string;
+    borderColor: string;
+  }>`
     svg#hamburger-icon {
       width: 22px;
       cursor: pointer;
@@ -17,6 +20,7 @@ export const useMenuStyles = () => {
       }
 
       > ul {
+        background-color: transparent;
         display: flex;
         height: auto;
         width: auto;
@@ -60,13 +64,13 @@ export const useMenuStyles = () => {
 
               :hover {
                 padding: 10px 20px 10px 14px;
-                border-left: 6px solid #fff;
+                border-left: 6px solid ${(props) => props.borderColor};
               }
             }
           }
 
           :hover {
-            border-bottom: 2px solid #fff;
+            border-bottom: 2px solid ${(props) => props.borderColor};
 
             > li {
               padding: 4px 10px 2px 10px;
@@ -84,10 +88,10 @@ export const useMenuStyles = () => {
 
   const MenuList = styled.ul<{
     show?: boolean;
-    bgColor?: string;
-    textColor?: string;
-    textSize?: string;
-    closeButtonColor?: string;
+    bgColor: string;
+    textColor: string;
+    textSize: string;
+    closeButtonColor: string;
   }>`
     display: ${(props) => (props.show ? "flex" : "none")};
     background-color: ${(props) => (props.bgColor ? props.bgColor : "#fff")};

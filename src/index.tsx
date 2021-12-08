@@ -1,43 +1,29 @@
-import React, { CSSProperties } from "react";
-import "./styles.css";
-import "./responsive.css";
+import React from "react";
 
 import { Logo } from "./components/Logo";
 import { MenuComponent } from "./components/Menu";
 import { LogoProps } from "./components/Logo/types";
 import { MenuProps } from "./components/Menu/types";
 import { UserMenu } from "./components/UserMenu";
+import { MyTopbarStyles } from "./styles";
 
 interface Props extends LogoProps, MenuProps {
-  viewOptions: {
-    bgColor: string;
+  barOptions: {
     height: number;
     maxWidth: number;
   };
 }
 
-export const MyTopbar = ({ viewOptions, logo, menu }: Props): JSX.Element => {
-  const contentStyle = (maxWidth: number): CSSProperties => ({
-    maxWidth,
-  });
-
-  const containerStyles = (height: number, bg: string): CSSProperties => ({
-    backgroundColor: bg,
-    height,
-  });
-
+export const MyTopbar = ({ barOptions, logo, menu }: Props): JSX.Element => {
   return (
-    <div
-      id="container"
-      style={containerStyles(viewOptions.height, viewOptions.bgColor)}
-    >
-      <div id="content" style={contentStyle(viewOptions.maxWidth)}>
+    <MyTopbarStyles.Container bgColor={menu.bgColor} height={barOptions.height}>
+      <MyTopbarStyles.Content maxWidth={barOptions.maxWidth}>
         <Logo logo={logo} />
 
         <MenuComponent menu={menu} />
 
         <UserMenu />
-      </div>
-    </div>
+      </MyTopbarStyles.Content>
+    </MyTopbarStyles.Container>
   );
 };

@@ -7,14 +7,18 @@ import { ReactComponent as CompactLogo } from "./assets/compact-logo.svg";
 export const App: React.FC = () => {
   return (
     <MyTopbar
-      viewOptions={{ bgColor: "#37AD8C", height: 60, maxWidth: 1366 }}
+      barOptions={{
+        height: 60,
+        maxWidth: 1366,
+      }}
       logo={{ SvgFullLogo: FullLogo, SvgCompactLogo: CompactLogo }}
       menu={{
-        bgColor: "#37AD8C",
-        textColor: "#fff",
+        bgColor: "#fff",
+        textColor: "#8F00C1",
         textSize: "18px",
-        closeButtonColor: "#fff",
-        hamburgerIconColor: "#fff",
+        closeButtonColor: "#00000080",
+        hamburgerIconColor: "#8F00C1",
+        borderColor: "#8F00C1",
 
         items: [
           {
