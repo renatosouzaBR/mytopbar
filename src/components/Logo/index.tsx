@@ -1,13 +1,13 @@
 import React from "react";
-import "./styles.css";
-import "./responsive.css";
+
 import { LogoProps } from "./types";
+import { LogoStyles } from "./styles";
 
 export const Logo: React.FC<LogoProps> = ({ logo }) => {
   return (
-    <div id="logo">
+    <LogoStyles.Container id="logo">
       <logo.SvgFullLogo id="full-logo" />
       <logo.SvgCompactLogo id="compact-logo" />
-    </div>
+    </LogoStyles.Container>
   );
 };
