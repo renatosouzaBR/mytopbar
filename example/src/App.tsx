@@ -29,6 +29,7 @@ export const App: React.FC = () => {
           { label: "Estoque" },
         ],
       }}
+      userMenuOptions={{ style: { avatarButtonColor: "#8F00C1" } }}
     />
   );
 };
