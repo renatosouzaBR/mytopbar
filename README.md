@@ -98,9 +98,19 @@ import { MyTopbar } from "mytopbar"; //Aqui eu importo o componente
 export const App = () => {
   return (
     <MyTopbar
-      viewOptions={{ bgColor: "#37AD8C", height: 60, maxWidth: 1366 }}
+      barOptions={{
+        height: 60,
+        maxWidth: 1366,
+      }}
       logo={{ SvgFullLogo: FullLogo, SvgCompactLogo: CompactLogo }}
       menu={{
+        bgColor: "#fff",
+        textColor: "#8F00C1",
+        textSize: "18px",
+        closeButtonColor: "#00000080",
+        hamburgerIconColor: "#8F00C1",
+        borderColor: "#8F00C1",
+
         items: [
           {
             label: "Cadastros",
@@ -119,8 +129,7 @@ export const App = () => {
 
 | Propriedade |                    |                                                                                                                                                                              |
 | ----------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| viewOptions | bgColor            | Cor de fundo da barra principal                                                                                                                                              |
-|             | height             | Altura da barra principal                                                                                                                                                    |
+| barOptions  | height             | Altura da barra principal                                                                                                                                                    |
 |             | maxWidth           | Largura em que a barra principal deve se estender                                                                                                                            |
 | logo        | SvgFullLogo        | Imagem da logo completa para telas > 960px                                                                                                                                   |
 |             | SvgCompactLogo     | Imagem da logo compacta para telas < 960px                                                                                                                                   |
@@ -130,6 +139,7 @@ export const App = () => {
 |             | textSize           | Tamanho do texto do menu. Pode ser utilizado px, em, rem, etc.                                                                                                               |
 |             | closeButtonColor   | Cor do botão de fechar menu. Apenas para telas < 960px                                                                                                                       |
 |             | hamburgerIconColor | Cor do icone de menu hamburguer. Apenas para telas < 960px                                                                                                                   |
+|             | borderColor        | Cor da borda do efeito hover do menu e submenu                                                                                                                               |
 
 <p align="right">(<a href="#top">voltar ao topo</a>)</p>
 
@@ -144,6 +154,8 @@ export const App = () => {
 - [ ] Adicionar props children para cada componente (logo, menu, menu avatar) para ser possível substituir toda a implementação de cada parte da topbar.
 - [ ] Adicionar gif de demonstração do componente
 - [ ] Adicionar testes
+- [ ] Publicar NPM
+- [ ] Adicionar mais props para mudança de layout
 
 Veja as [questões abertas](https://github.com/renatosouzaBR/mytopbar/issues) para uma lista completa de recursos propostos e problemas conhecidos.
 
