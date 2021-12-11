@@ -120,6 +120,26 @@ export const App = () => {
           { label: "Estoque" },
         ],
       }}
+      /* Configuração do menu opções de avatar */
+      userMenuOptions={{
+        avatarStyle: {
+          buttonColor: "#00C4DF",
+          buttonBorderColor: "#C4C4C4",
+        },
+        menuStyle: {
+          bgColor: "#FFF",
+          hoverColor: "rgba(0, 0, 0, 0.05)",
+          hoverBorderLeftColor: "#00C4DF",
+          textColor: "#363636",
+          fontSize: "12px",
+          fontWeight: "400",
+        },
+        items: [
+          { label: "Configurações", onClick: () => console.log("clicou") },
+          { label: "Perfil", onClick: () => console.log("clicou") },
+          { label: "Sair", onClick: () => console.log("clicou") },
+        ],
+      }}
     />
   );
 };
@@ -127,19 +147,29 @@ export const App = () => {
 
 - Vamos explorar cada propriedade da configuração do componente:
 
-| Propriedade |                    |                                                                                                                                                                              |
-| ----------- | ------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| barOptions  | height             | Altura da barra principal                                                                                                                                                    |
-|             | maxWidth           | Largura em que a barra principal deve se estender                                                                                                                            |
-| logo        | SvgFullLogo        | Imagem da logo completa para telas > 960px                                                                                                                                   |
-|             | SvgCompactLogo     | Imagem da logo compacta para telas < 960px                                                                                                                                   |
-| menu        | items              | Itens do menu. Você deve adicionar uma label para o nome, eventos de click, submenus, etc.                                                                                   |
-|             | bgColor            | Cor de fundo do menu. Quando a tela for < 960px, o menu se estende por toda a tela, caso contrario a cor so é aplicada a submenus, onde o menu deve ter o mesmo bg da barra. |
-|             | textColor          | Cor do texto do menu                                                                                                                                                         |
-|             | textSize           | Tamanho do texto do menu. Pode ser utilizado px, em, rem, etc.                                                                                                               |
-|             | closeButtonColor   | Cor do botão de fechar menu. Apenas para telas < 960px                                                                                                                       |
-|             | hamburgerIconColor | Cor do icone de menu hamburguer. Apenas para telas < 960px                                                                                                                   |
-|             | borderColor        | Cor da borda do efeito hover do menu e submenu                                                                                                                               |
+| Propriedade     |                          |                      |                                                                                                                                                                              |
+| --------------- | ------------------------ | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+|                 | barOptions               | height               | Altura da barra principal                                                                                                                                                    |
+|                 |                          | maxWidth             | Largura em que a barra principal deve se estender                                                                                                                            |
+|                 | logo                     | SvgFullLogo          | Imagem da logo completa para telas > 960px                                                                                                                                   |
+|                 |                          | SvgCompactLogo       | Imagem da logo compacta para telas < 960px                                                                                                                                   |
+|                 | menu                     | items                | Itens do menu. Você deve adicionar uma label para o nome, eventos de click, submenus, etc.                                                                                   |
+|                 |                          | bgColor              | Cor de fundo do menu. Quando a tela for < 960px, o menu se estende por toda a tela, caso contrario a cor so é aplicada a submenus, onde o menu deve ter o mesmo bg da barra. |
+|                 |                          | textColor            | Cor do texto do menu                                                                                                                                                         |
+|                 |                          | textSize             | Tamanho do texto do menu. Pode ser utilizado px, em, rem, etc.                                                                                                               |
+|                 |                          | closeButtonColor     | Cor do botão de fechar menu. Apenas para telas < 960px                                                                                                                       |
+|                 |                          | hamburgerIconColor   | Cor do icone de menu hamburguer. Apenas para telas < 960px                                                                                                                   |
+|                 |                          | borderColor          | Cor da borda do efeito hover do menu e submenu                                                                                                                               |
+| userMenuOptions | avatarStyle              | buttonColor          | Cor da imagem do avatar e seta para baixo do botão que abre o menu avatar                                                                                                    |
+|                 |                          | buttonBorderColor    | Cor da borda do botão que abre o menu de avatar                                                                                                                              |
+|                 | menuStyle                | bgColor              | Cor de fundo do menu avatar                                                                                                                                                  |
+|                 |                          | hoverColor           | Cor de fundo do efeito hover para cada item do menu avatar                                                                                                                   |
+|                 |                          | hoverBorderLeftColor | Cor da borda esquerda que é aplicada quando passa o mouse por um item do menu avatar                                                                                         |
+|                 |                          | textColor            | Cor do texto de cada item do menu avatar                                                                                                                                     |
+|                 |                          | fontSize             | Tamanho do texto de cada item do menu avatar                                                                                                                                 |
+|                 |                          | fontWeight           | Peso do texto de cada item do menu avatar                                                                                                                                    |
+|                 | items (Array of Objects) | label                | Texto do item de menu para o menu avatar                                                                                                                                     |
+|                 |                          | onClick              | Função de clique do item de menu para o menu avatar                                                                                                                          |
 
 <p align="right">(<a href="#top">voltar ao topo</a>)</p>
 
@@ -150,7 +180,7 @@ export const App = () => {
 - [x] Adicionar barra principal para compor os demais itens
 - [x] Adicionar renderização de logo completa e compacta para responsividade
 - [x] Adicionar menu/submenu com responsividade
-- [ ] Adicionar menu com opções gerais (menu de avatar)
+- [x] Adicionar menu com opções gerais (menu de avatar)
 - [ ] Adicionar props children para cada componente (logo, menu, menu avatar) para ser possível substituir toda a implementação de cada parte da topbar.
 - [ ] Adicionar gif de demonstração do componente
 - [ ] Adicionar testes
