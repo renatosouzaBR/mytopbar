@@ -156,6 +156,8 @@ export const App = () => {
 - [ ] Adicionar testes
 - [ ] Publicar NPM
 - [ ] Adicionar mais props para mudança de layout
+- [ ] Adicionar linha/separador de itens de menu
+- [ ] Adicionar borda no menu referente a pagina atual (menu selecionado)
 
 Veja as [questões abertas](https://github.com/renatosouzaBR/mytopbar/issues) para uma lista completa de recursos propostos e problemas conhecidos.
 
