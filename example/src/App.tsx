@@ -29,7 +29,26 @@ export const App: React.FC = () => {
           { label: "Estoque" },
         ],
       }}
-      userMenuOptions={{ style: { avatarButtonColor: "#8F00C1" } }}
+      /* Configuração do menu opções de avatar */
+      userMenuOptions={{
+        avatarStyle: {
+          buttonColor: "#00C4DF",
+          buttonBorderColor: "#C4C4C4",
+        },
+        menuStyle: {
+          bgColor: "#FFF",
+          hoverColor: "rgba(0, 0, 0, 0.05)",
+          hoverBorderLeftColor: "#00C4DF",
+          textColor: "#363636",
+          fontSize: "12px",
+          fontWeight: "400",
+        },
+        items: [
+          { label: "Configurações", onClick: () => console.log("clicou") },
+          { label: "Perfil", onClick: () => console.log("clicou") },
+          { label: "Sair", onClick: () => console.log("clicou") },
+        ],
+      }}
     />
   );
 };
