@@ -2,12 +2,18 @@ import React, { useState } from "react";
 
 import { useMenuStyles } from "./styles";
 import { MenuProps } from "./types";
+
 import { ReactComponent as HamburgerIcon } from "../../assets/hamburger-icon.svg";
 import { ReactComponent as CloseIcon } from "../../assets/close-icon.svg";
 import { ReactComponent as ArrowRightIcon } from "../../assets/arrow-right-icon.svg";
 import { SubmenuComponent } from "../Submenu";
 
-export const MenuComponent: React.FC<MenuProps> = ({ menu }) => {
+export const MenuComponent: React.FC<MenuProps> = ({
+  menuStyle,
+  submenuStyle,
+  responsiveMenuStyle,
+  items,
+}) => {
   const { Container, MenuList, MenuItem, MenuItemButton } = useMenuStyles();
 
   const [showMenu, setShowMenu] = useState(false);
@@ -19,25 +25,18 @@ export const MenuComponent: React.FC<MenuProps> = ({ menu }) => {
   }
 
   return (
-    <Container
-      id="menu"
-      hamburgerIconColor={menu.hamburgerIconColor}
-      borderColor={menu.borderColor}
-    >
+    <Container id="menu" {...responsiveMenuStyle}>
       <HamburgerIcon id="hamburger-icon" onClick={handleOpenCloseMenu} />
 
-      <MenuList
-        show={showMenu}
-        bgColor={menu.bgColor}
-        textColor={menu.textColor}
-        textSize={menu.textSize}
-        closeButtonColor={menu.closeButtonColor}
-      >
+      <MenuList show={showMenu} {...responsiveMenuStyle}>
         <CloseIcon id="close-icon" onClick={handleOpenCloseMenu} />
 
-        {menu.items.map((item) => (
-          <MenuItemButton key={item.label}>
-            <MenuItem onClick={() => setSubmenuLabel(item.label)}>
+        {items.map((item, index) => (
+          <MenuItemButton key={index}>
+            <MenuItem
+              onClick={() => setSubmenuLabel(item.label)}
+              {...menuStyle}
+            >
               {item.label}
             </MenuItem>
 
@@ -45,6 +44,7 @@ export const MenuComponent: React.FC<MenuProps> = ({ menu }) => {
 
             {item.submenu && (
               <SubmenuComponent
+                submenuStyle={submenuStyle}
                 show={window.innerWidth > 960 || item.label === submenuLabel}
                 id={item.label}
                 data={item.submenu}

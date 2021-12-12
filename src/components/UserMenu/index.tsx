@@ -3,9 +3,9 @@ import React from "react";
 import { ReactComponent as AvatarIcon } from "../../assets/avatar-icon.svg";
 import { ReactComponent as ChevronIcon } from "../../assets/chevron-down-icon.svg";
 import { useUserMenuStyles } from "./styles";
-import { UserMenu } from "./types";
+import { UserMenuProps } from "./types";
 
-export const UserMenuComponent: React.FC<UserMenu> = ({
+export const UserMenuComponent: React.FC<UserMenuProps> = ({
   items,
   avatarStyle,
   menuStyle,
@@ -24,8 +24,8 @@ export const UserMenuComponent: React.FC<UserMenu> = ({
         <TriangleIcon {...menuStyle} />
 
         <List {...menuStyle}>
-          {items.map((item) => (
-            <ListItem {...menuStyle} onClick={item.onClick}>
+          {items.map((item, index) => (
+            <ListItem key={index} onClick={item.onClick} {...menuStyle}>
               {item.label}
             </ListItem>
           ))}

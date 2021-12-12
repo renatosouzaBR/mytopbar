@@ -12,6 +12,15 @@ interface Props {
   show: boolean;
   closeMenu: () => void;
   closeSubmenu: () => void;
+
+  submenuStyle: {
+    textColor: string;
+    fontSize: string;
+    fontWeight: string;
+    bgColor: string;
+    hoverColor: string;
+    hoverBorderLeftColor: string;
+  };
 }
 
 export const SubmenuComponent: React.FC<Props> = ({
@@ -20,13 +29,14 @@ export const SubmenuComponent: React.FC<Props> = ({
   show,
   closeMenu,
   closeSubmenu,
+  submenuStyle,
 }) => {
   const { SubmenuList, SubmenuItem, Header, HeaderText } = useSubmenuStyles();
 
   if (!show) return null;
 
   return (
-    <SubmenuList id={id}>
+    <SubmenuList id={id} {...submenuStyle}>
       <CloseIcon id="close-icon" onClick={closeMenu} />
 
       <Header id="submenu-header" onClick={closeSubmenu}>
@@ -34,8 +44,10 @@ export const SubmenuComponent: React.FC<Props> = ({
         <HeaderText>{id}</HeaderText>
       </Header>
 
-      {data.map((item) => (
-        <SubmenuItem onClick={item.onClick}>{item.label}</SubmenuItem>
+      {data.map((item, index) => (
+        <SubmenuItem key={index} onClick={item.onClick}>
+          {item.label}
+        </SubmenuItem>
       ))}
     </SubmenuList>
   );

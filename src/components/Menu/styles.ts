@@ -3,98 +3,33 @@ import styled from "styled-components";
 export const useMenuStyles = () => {
   const Container = styled.div<{
     hamburgerIconColor: string;
-    borderColor: string;
   }>`
     svg#hamburger-icon {
       width: 22px;
       cursor: pointer;
 
-      color: ${(props) =>
-        props.hamburgerIconColor ? props.hamburgerIconColor : "#00000090"};
+      color: ${(props) => props.hamburgerIconColor};
     }
 
-    /* Responsividade */
     @media screen and (min-width: 961px) {
+      height: 80%;
+
       svg#hamburger-icon {
         display: none;
       }
-
-      > ul {
-        background-color: transparent;
-        display: flex;
-        height: auto;
-        width: auto;
-
-        position: relative;
-        flex-direction: row;
-        justify-content: center;
-        padding: 0;
-        gap: 14px;
-
-        svg {
-          display: none;
-        }
-
-        > div {
-          width: auto;
-
-          > li {
-            width: auto;
-            padding: 4px 10px;
-          }
-
-          ul {
-            display: none;
-            top: 100%;
-            width: auto;
-            height: auto;
-
-            padding: 0;
-            align-items: flex-start;
-
-            box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
-            border-radius: 2px;
-
-            div#submenu-header {
-              display: none;
-            }
-
-            li {
-              width: auto;
-
-              :hover {
-                padding: 10px 20px 10px 14px;
-                border-left: 6px solid ${(props) => props.borderColor};
-              }
-            }
-          }
-
-          :hover {
-            border-bottom: 2px solid ${(props) => props.borderColor};
-
-            > li {
-              padding: 4px 10px 2px 10px;
-            }
-
-            > ul {
-              display: flex;
-            }
-          }
-        }
-      }
     }
-    /* Responsividade */
   `;
 
   const MenuList = styled.ul<{
     show?: boolean;
     bgColor: string;
     textColor: string;
-    textSize: string;
+    fontSize: string;
+    fontWeight: string;
     closeButtonColor: string;
   }>`
     display: ${(props) => (props.show ? "flex" : "none")};
-    background-color: ${(props) => (props.bgColor ? props.bgColor : "#fff")};
+    background-color: ${(props) => props.bgColor};
 
     list-style-type: none;
 
@@ -110,8 +45,7 @@ export const useMenuStyles = () => {
     padding: 120px 0;
 
     svg#close-icon {
-      fill: ${(props) =>
-        props.closeButtonColor ? props.closeButtonColor : "#c5c5c5"};
+      fill: ${(props) => props.closeButtonColor};
 
       position: absolute;
       right: 32px;
@@ -121,18 +55,37 @@ export const useMenuStyles = () => {
     }
 
     ul {
-      background-color: ${(props) => (props.bgColor ? props.bgColor : "#fff")};
+      background-color: ${(props) => props.bgColor};
     }
 
     svg {
-      fill: ${(props) => (props.textColor ? props.textColor : "#c5c5c5")};
+      fill: ${(props) => props.textColor};
     }
 
     li,
     span {
-      color: ${(props) => (props.textColor ? props.textColor : "#000")};
-      font-size: ${(props) => (props.textSize ? props.textSize : "20px")};
-      font-weight: 600;
+      color: ${(props) => props.textColor};
+      font-size: ${(props) => props.fontSize};
+      font-weight: ${(props) => props.fontWeight};
+    }
+
+    @media screen and (min-width: 961px) {
+      background-color: transparent;
+      display: flex;
+      height: 100%;
+      width: auto;
+
+      position: relative !important;
+      top: 0;
+
+      flex-direction: row;
+      justify-content: center;
+      padding: 0;
+      gap: 30px;
+
+      svg {
+        display: none;
+      }
     }
   `;
 
@@ -142,14 +95,38 @@ export const useMenuStyles = () => {
     align-items: center;
 
     width: 260px;
+
+    @media screen and (min-width: 961px) {
+      width: auto;
+      height: 100%;
+
+      :hover {
+        ul {
+          display: flex;
+        }
+      }
+    }
   `;
 
-  const MenuItem = styled.li`
+  const MenuItem = styled.li<{
+    textColor: string;
+    fontSize: string;
+    fontWeight: string;
+  }>`
     padding: 10px 20px;
     flex-direction: row;
     width: 220px;
 
     cursor: pointer;
+
+    @media screen and (min-width: 961px) {
+      font-size: ${(props) => props.fontSize} !important;
+      font-weight: ${(props) => props.fontWeight} !important;
+      color: ${(props) => props.textColor} !important;
+
+      width: auto;
+      padding: 4px 10px;
+    }
   `;
 
   return {

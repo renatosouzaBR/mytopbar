@@ -6,17 +6,30 @@ interface MenuItem {
   onClick?: () => void;
 }
 
-interface Menu {
-  bgColor: string;
-  textColor: string;
-  textSize: string;
-  borderColor: string;
-  closeButtonColor: string;
-  hamburgerIconColor: string;
+export interface MenuProps {
+  menuStyle: {
+    textColor: string;
+    fontSize: string;
+    fontWeight: string;
+  };
+
+  submenuStyle: {
+    textColor: string;
+    fontSize: string;
+    fontWeight: string;
+    bgColor: string;
+    hoverColor: string;
+    hoverBorderLeftColor: string;
+  };
+
+  responsiveMenuStyle: {
+    hamburgerIconColor: string;
+    closeButtonColor: string;
+    bgColor: string;
+    textColor: string;
+    fontSize: string;
+    fontWeight: string;
+  };
 
   items: MenuItem[];
-}
-
-export interface MenuProps {
-  menu: Menu;
 }

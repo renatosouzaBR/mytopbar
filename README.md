@@ -181,13 +181,15 @@ export const App = () => {
 - [x] Adicionar renderização de logo completa e compacta para responsividade
 - [x] Adicionar menu/submenu com responsividade
 - [x] Adicionar menu com opções gerais (menu de avatar)
+- [ ] Adicionar/organizar props para mudança de layout
+- [ ] Adicionar responsividade ao menu avatar
 - [ ] Adicionar props children para cada componente (logo, menu, menu avatar) para ser possível substituir toda a implementação de cada parte da topbar.
 - [ ] Adicionar gif de demonstração do componente
 - [ ] Adicionar testes
 - [ ] Publicar NPM
-- [ ] Adicionar mais props para mudança de layout
 - [ ] Adicionar linha/separador de itens de menu
 - [ ] Adicionar borda no menu referente a pagina atual (menu selecionado)
+- [ ] Adicionar função de clique na logo
 
 Veja as [questões abertas](https://github.com/renatosouzaBR/mytopbar/issues) para uma lista completa de recursos propostos e problemas conhecidos.
 

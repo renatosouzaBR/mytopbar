@@ -3,7 +3,7 @@ interface UserMenuItem {
   onClick?: () => void;
 }
 
-export interface UserMenu {
+export interface UserMenuProps {
   avatarStyle: {
     buttonColor: string;
     buttonBorderColor: string;
