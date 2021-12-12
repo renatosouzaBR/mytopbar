@@ -98,18 +98,42 @@ import { MyTopbar } from "mytopbar"; //Aqui eu importo o componente
 export const App = () => {
   return (
     <MyTopbar
+      /* Configurações da logo complete e compacta */
+      logo={{ SvgFullLogo: FullLogo, SvgCompactLogo: CompactLogo }}
+      /* Configuração da barra principal */
       barOptions={{
         height: 60,
         maxWidth: 1366,
+        bgColor: "#37AD8C",
       }}
-      logo={{ SvgFullLogo: FullLogo, SvgCompactLogo: CompactLogo }}
-      menu={{
-        bgColor: "#fff",
-        textColor: "#8F00C1",
-        textSize: "18px",
-        closeButtonColor: "#00000080",
-        hamburgerIconColor: "#8F00C1",
-        borderColor: "#8F00C1",
+      /* Configuraçãp do menu principal */
+      menuOptions={{
+        /* Configuraçãp do menu e submenu com responsividae */
+        responsiveMenuStyle: {
+          hamburgerIconColor: "#FFF",
+          bgColor: "#37AD8C",
+          closeButtonColor: "#FFF",
+          fontSize: "24px",
+          fontWeight: "600",
+          textColor: "#FFF",
+        },
+
+        /* Configuraçãp do submenu da barra principal sem responsividade */
+        menuStyle: {
+          textColor: "#FFF",
+          fontWeight: "500",
+          fontSize: "15px",
+        },
+
+        /* Configuraçãp do menu da barra principal sem responsividade */
+        submenuStyle: {
+          bgColor: "#FFF",
+          fontSize: "14px",
+          fontWeight: "500",
+          textColor: "rgb(64, 64, 64)",
+          hoverBorderLeftColor: "#37AD8C",
+          hoverColor: "rgba(0, 0, 0, 0.05)",
+        },
 
         items: [
           {
@@ -123,13 +147,13 @@ export const App = () => {
       /* Configuração do menu opções de avatar */
       userMenuOptions={{
         avatarStyle: {
-          buttonColor: "#00C4DF",
-          buttonBorderColor: "#C4C4C4",
+          buttonColor: "#FFF",
+          buttonBorderColor: "#FFF",
         },
         menuStyle: {
           bgColor: "#FFF",
           hoverColor: "rgba(0, 0, 0, 0.05)",
-          hoverBorderLeftColor: "#00C4DF",
+          hoverBorderLeftColor: "#37AD8C",
           textColor: "#363636",
           fontSize: "12px",
           fontWeight: "400",
