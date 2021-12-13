@@ -3,11 +3,12 @@ import React from "react";
 import { LogoProps } from "./types";
 import { LogoStyles } from "./styles";
 
-export const Logo: React.FC<LogoProps> = ({ logo }) => {
-  return (
+export const Logo: React.FC<LogoProps> = (props) =>
+  "wrapper" in props ? (
+    <>{props.wrapper}</>
+  ) : (
     <LogoStyles.Container id="logo">
-      <logo.SvgFullLogo id="full-logo" />
-      <logo.SvgCompactLogo id="compact-logo" />
+      <props.svgFullLogo id="full-logo" />
+      <props.svgCompactLogo id="compact-logo" />
     </LogoStyles.Container>
   );
-};

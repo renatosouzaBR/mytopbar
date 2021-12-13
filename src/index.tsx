@@ -9,7 +9,8 @@ import { MenuComponent } from "./components/Menu";
 import { UserMenuComponent } from "./components/UserMenu";
 import { MyTopbarStyles } from "./styles";
 
-interface Props extends LogoProps {
+interface Props {
+  logo: LogoProps;
   barOptions: {
     bgColor: string;
     height: number;
@@ -28,7 +29,7 @@ export const MyTopbar = ({
   return (
     <MyTopbarStyles.Container {...barOptions}>
       <MyTopbarStyles.Content {...barOptions}>
-        <Logo logo={logo} />
+        {logo && <Logo {...logo} />}
 
         <MenuComponent {...menuOptions} />
 
