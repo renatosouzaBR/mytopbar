@@ -99,7 +99,7 @@ export const App = () => {
   return (
     <MyTopbar
       /* Configurações da logo complete e compacta */
-      logo={{ SvgFullLogo: FullLogo, SvgCompactLogo: CompactLogo }}
+      logo={{ svgFullLogo: FullLogo, svgCompactLogo: CompactLogo }}
       /* Configuração da barra principal */
       barOptions={{
         height: 60,
@@ -171,41 +171,42 @@ export const App = () => {
 
 - Vamos explorar cada propriedade da configuração do componente:
 
-| Propriedade     |                             |                      |                                                                                      |
-| --------------- | --------------------------- | -------------------- | ------------------------------------------------------------------------------------ |
-| barOptions      |                             | height               | Altura da barra principal                                                            |
-|                 |                             | maxWidth             | Largura em que a barra principal deve se estender                                    |
-|                 |                             | bgColor              | Cor de fundo da barra principal                                                      |
-| logo            |                             | SvgFullLogo          | Imagem da logo completa para telas > 960px                                           |
-|                 |                             | SvgCompactLogo       | Imagem da logo compacta para telas < 960px                                           |
-| menuOptions     | items (Array of Objects)    | label                | Texto do item de menu                                                                |
-|                 |                             | onClick              | Função de clique do item de menu                                                     |
-|                 |                             | submenu              | Array de objeto com os mesmos itens dessa seção                                      |
-|                 | responsiveMenuStyle < 960px | hamburgerIconColor   | Cor do icone hamburguer para menu responsivo                                         |
-|                 |                             | bgColor              | Cor de fundo do menu, aplicado para submenus também                                  |
-|                 |                             | closeButtonColor     | Cor do icone "X" de fechar o menu                                                    |
-|                 |                             | fontSize             | Tamanho do texto do item de menu                                                     |
-|                 |                             | fontWeight           | Peso do texto do item de menu                                                        |
-|                 |                             | textColor            | Cor do texto do item de menu                                                         |
-|                 | menuStyle > 960px           | fontSize             | Tamanho do texto do item de menu                                                     |
-|                 |                             | fontWeight           | Peso do texto do item de menu                                                        |
-|                 |                             | textColor            | Cor do texto do item de menu                                                         |
-|                 | submenuStyle > 960px        | bgColor              | Cor de fundo de submenu                                                              |
-|                 |                             | fontSize             | Tamanho do texto do item de submenu                                                  |
-|                 |                             | fontWeight           | Peso do texto do item de submenu                                                     |
-|                 |                             | textColor            | Cor do texto do item de submenu                                                      |
-|                 |                             | hoverBorderLeftColor | Cor da borda esquerda para efeito hover do item de submenu                           |
-|                 |                             | hoverBorderLeftColor | Cor de fundo para efeito hover do item de submenu                                    |
-| userMenuOptions | avatarStyle                 | buttonColor          | Cor da imagem do avatar e seta para baixo do botão que abre o menu avatar            |
-|                 |                             | buttonBorderColor    | Cor da borda do botão que abre o menu de avatar                                      |
-|                 | menuStyle                   | bgColor              | Cor de fundo do menu avatar                                                          |
-|                 |                             | hoverColor           | Cor de fundo do efeito hover para cada item do menu avatar                           |
-|                 |                             | hoverBorderLeftColor | Cor da borda esquerda que é aplicada quando passa o mouse por um item do menu avatar |
-|                 |                             | textColor            | Cor do texto de cada item do menu avatar                                             |
-|                 |                             | fontSize             | Tamanho do texto de cada item do menu avatar                                         |
-|                 |                             | fontWeight           | Peso do texto de cada item do menu avatar                                            |
-|                 | items (Array of Objects)    | label                | Texto do item de menu para o menu avatar                                             |
-|                 |                             | onClick              | Função de clique do item de menu para o menu avatar                                  |
+| Propriedade             |                             |                      |                                                                                      |
+| ----------------------- | --------------------------- | -------------------- | ------------------------------------------------------------------------------------ |
+| barOptions              |                             | height               | Altura da barra principal                                                            |
+|                         |                             | maxWidth             | Largura em que a barra principal deve se estender                                    |
+|                         |                             | bgColor              | Cor de fundo da barra principal                                                      |
+| logo (null para omitir) |                             | svgFullLogo          | Imagem da logo completa para telas > 960px                                           |
+|                         |                             | svgCompactLogo       | Imagem da logo compacta para telas < 960px                                           |
+|                         |                             | wrapper              | Recebe um elemento React que substitui toda a implementação                          |
+| menuOptions             | items (Array of Objects)    | label                | Texto do item de menu                                                                |
+|                         |                             | onClick              | Função de clique do item de menu                                                     |
+|                         |                             | submenu              | Array de objeto com os mesmos itens dessa seção                                      |
+|                         | responsiveMenuStyle < 960px | hamburgerIconColor   | Cor do icone hamburguer para menu responsivo                                         |
+|                         |                             | bgColor              | Cor de fundo do menu, aplicado para submenus também                                  |
+|                         |                             | closeButtonColor     | Cor do icone "X" de fechar o menu                                                    |
+|                         |                             | fontSize             | Tamanho do texto do item de menu                                                     |
+|                         |                             | fontWeight           | Peso do texto do item de menu                                                        |
+|                         |                             | textColor            | Cor do texto do item de menu                                                         |
+|                         | menuStyle > 960px           | fontSize             | Tamanho do texto do item de menu                                                     |
+|                         |                             | fontWeight           | Peso do texto do item de menu                                                        |
+|                         |                             | textColor            | Cor do texto do item de menu                                                         |
+|                         | submenuStyle > 960px        | bgColor              | Cor de fundo de submenu                                                              |
+|                         |                             | fontSize             | Tamanho do texto do item de submenu                                                  |
+|                         |                             | fontWeight           | Peso do texto do item de submenu                                                     |
+|                         |                             | textColor            | Cor do texto do item de submenu                                                      |
+|                         |                             | hoverBorderLeftColor | Cor da borda esquerda para efeito hover do item de submenu                           |
+|                         |                             | hoverBorderLeftColor | Cor de fundo para efeito hover do item de submenu                                    |
+| userMenuOptions         | avatarStyle                 | buttonColor          | Cor da imagem do avatar e seta para baixo do botão que abre o menu avatar            |
+|                         |                             | buttonBorderColor    | Cor da borda do botão que abre o menu de avatar                                      |
+|                         | menuStyle                   | bgColor              | Cor de fundo do menu avatar                                                          |
+|                         |                             | hoverColor           | Cor de fundo do efeito hover para cada item do menu avatar                           |
+|                         |                             | hoverBorderLeftColor | Cor da borda esquerda que é aplicada quando passa o mouse por um item do menu avatar |
+|                         |                             | textColor            | Cor do texto de cada item do menu avatar                                             |
+|                         |                             | fontSize             | Tamanho do texto de cada item do menu avatar                                         |
+|                         |                             | fontWeight           | Peso do texto de cada item do menu avatar                                            |
+|                         | items (Array of Objects)    | label                | Texto do item de menu para o menu avatar                                             |
+|                         |                             | onClick              | Função de clique do item de menu para o menu avatar                                  |
 
 <p align="right">(<a href="#top">voltar ao topo</a>)</p>
 
