@@ -1,9 +1,13 @@
+interface UserMenuComponent {
+  wrapper: React.ReactNode;
+}
+
 interface UserMenuItem {
   label: string;
   onClick?: () => void;
 }
 
-export interface UserMenuProps {
+export interface UserMenuOptions {
   avatarStyle: {
     buttonColor: string;
     buttonBorderColor: string;
@@ -20,3 +24,5 @@ export interface UserMenuProps {
 
   items: UserMenuItem[];
 }
+
+export type UserMenuProps = UserMenuOptions | UserMenuComponent | null;

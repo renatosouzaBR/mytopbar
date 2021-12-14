@@ -3,9 +3,9 @@ import React from "react";
 import { ReactComponent as AvatarIcon } from "../../assets/avatar-icon.svg";
 import { ReactComponent as ChevronIcon } from "../../assets/chevron-down-icon.svg";
 import { useUserMenuStyles } from "./styles";
-import { UserMenuProps } from "./types";
+import { UserMenuOptions, UserMenuProps } from "./types";
 
-export const UserMenuComponent: React.FC<UserMenuProps> = ({
+const UserMenuContainer: React.FC<UserMenuOptions> = ({
   items,
   avatarStyle,
   menuStyle,
@@ -34,3 +34,6 @@ export const UserMenuComponent: React.FC<UserMenuProps> = ({
     </Container>
   );
 };
+
+export const UserMenuComponent: React.FC<UserMenuProps> = (props) =>
+  "wrapper" in props ? <>{props.wrapper}</> : <UserMenuContainer {...props} />;

@@ -33,7 +33,7 @@ export const MyTopbar = ({
 
         {menuOptions && <MenuComponent {...menuOptions} />}
 
-        <UserMenuComponent {...userMenuOptions} />
+        {userMenuOptions && <UserMenuComponent {...userMenuOptions} />}
       </MyTopbarStyles.Content>
     </MyTopbarStyles.Container>
   );
