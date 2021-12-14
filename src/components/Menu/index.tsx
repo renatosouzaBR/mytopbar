@@ -1,21 +1,15 @@
 import React, { useState } from "react";
 
 import { useMenuStyles } from "./styles";
-import { MenuProps } from "./types";
+import { MenuOptions, MenuProps } from "./types";
 
 import { ReactComponent as HamburgerIcon } from "../../assets/hamburger-icon.svg";
 import { ReactComponent as CloseIcon } from "../../assets/close-icon.svg";
 import { ReactComponent as ArrowRightIcon } from "../../assets/arrow-right-icon.svg";
 import { SubmenuComponent } from "../Submenu";
 
-export const MenuComponent: React.FC<MenuProps> = ({
-  menuStyle,
-  submenuStyle,
-  responsiveMenuStyle,
-  items,
-}) => {
+const MenuContainer = (props: MenuOptions) => {
   const { Container, MenuList, MenuItem, MenuItemButton } = useMenuStyles();
-
   const [showMenu, setShowMenu] = useState(false);
   const [submenuLabel, setSubmenuLabel] = useState("");
 
@@ -25,17 +19,17 @@ export const MenuComponent: React.FC<MenuProps> = ({
   }
 
   return (
-    <Container id="menu" {...responsiveMenuStyle}>
+    <Container id="menu" {...props.responsiveMenuStyle}>
       <HamburgerIcon id="hamburger-icon" onClick={handleOpenCloseMenu} />
 
-      <MenuList show={showMenu} {...responsiveMenuStyle}>
+      <MenuList show={showMenu} {...props.responsiveMenuStyle}>
         <CloseIcon id="close-icon" onClick={handleOpenCloseMenu} />
 
-        {items.map((item, index) => (
+        {props.items.map((item, index) => (
           <MenuItemButton key={index}>
             <MenuItem
               onClick={() => setSubmenuLabel(item.label)}
-              {...menuStyle}
+              {...props.menuStyle}
             >
               {item.label}
             </MenuItem>
@@ -44,7 +38,7 @@ export const MenuComponent: React.FC<MenuProps> = ({
 
             {item.submenu && (
               <SubmenuComponent
-                submenuStyle={submenuStyle}
+                submenuStyle={props.submenuStyle}
                 show={window.innerWidth > 960 || item.label === submenuLabel}
                 id={item.label}
                 data={item.submenu}
@@ -58,3 +52,6 @@ export const MenuComponent: React.FC<MenuProps> = ({
     </Container>
   );
 };
+
+export const MenuComponent: React.FC<MenuProps> = (props) =>
+  "wrapper" in props ? <>{props.wrapper}</> : <MenuContainer {...props} />;

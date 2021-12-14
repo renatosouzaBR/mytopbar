@@ -1,12 +1,16 @@
 import { Submenu } from "../Submenu/types";
 
+interface MenuComponent {
+  wrapper: React.ReactNode;
+}
+
 interface MenuItem {
   label: string;
   submenu?: Submenu[];
   onClick?: () => void;
 }
 
-export interface MenuProps {
+export interface MenuOptions {
   menuStyle: {
     textColor: string;
     fontSize: string;
@@ -33,3 +37,5 @@ export interface MenuProps {
 
   items: MenuItem[];
 }
+
+export type MenuProps = MenuOptions | MenuComponent | null;

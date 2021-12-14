@@ -31,7 +31,7 @@ export const MyTopbar = ({
       <MyTopbarStyles.Content {...barOptions}>
         {logo && <Logo {...logo} />}
 
-        <MenuComponent {...menuOptions} />
+        {menuOptions && <MenuComponent {...menuOptions} />}
 
         <UserMenuComponent {...userMenuOptions} />
       </MyTopbarStyles.Content>
