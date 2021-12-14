@@ -8,7 +8,11 @@ export const App: React.FC = () => {
   return (
     <MyTopbar
       /* Configurações da logo complete e compacta */
-      logo={{ svgFullLogo: FullLogo, svgCompactLogo: CompactLogo }}
+      logo={{
+        svgFullLogo: FullLogo,
+        svgCompactLogo: CompactLogo,
+        logoUrl: "/",
+      }}
       /* Configuração da barra principal */
       barOptions={{
         height: 60,

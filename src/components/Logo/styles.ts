@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const LogoStyles = {
-  Container: styled.div`
+  Container: styled.a`
     width: auto;
+    cursor: pointer;
 
     svg#full-logo {
       display: block;
