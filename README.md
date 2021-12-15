@@ -188,6 +188,8 @@ export const App = () => {
 |                                    | items (Array of Objects)    | label                | Texto do item de menu                                                                |
 |                                    |                             | onClick              | Função de clique do item de menu                                                     |
 |                                    |                             | submenu              | Array de objeto com os mesmos itens dessa seção                                      |
+|                                    |                             | separator            | Cria uma separação/divisão na posição em que foi colocado no menu                    |
+|                                    |                             | color                | Cor da linha da divisão, somente quando usar "separator"                             |
 |                                    | responsiveMenuStyle < 960px | hamburgerIconColor   | Cor do icone hamburguer para menu responsivo                                         |
 |                                    |                             | bgColor              | Cor de fundo do menu, aplicado para submenus também                                  |
 |                                    |                             | closeButtonColor     | Cor do icone "X" de fechar o menu                                                    |
@@ -214,6 +216,8 @@ export const App = () => {
 |                                    |                             | fontWeight           | Peso do texto de cada item do menu avatar                                            |
 |                                    | items (Array of Objects)    | label                | Texto do item de menu para o menu avatar                                             |
 |                                    |                             | onClick              | Função de clique do item de menu para o menu avatar                                  |
+|                                    |                             | separator            | Cria uma separação/divisão na posição em que foi colocado no menu                    |
+|                                    |                             | color                | Cor da linha da divisão, somente quando usar "separator"                             |
 
 <p align="right">(<a href="#top">voltar ao topo</a>)</p>
 
@@ -228,7 +232,7 @@ export const App = () => {
 - [x] Adicionar/organizar props para mudança de layout
 - [x] Adicionar props wrapper para cada componente (logo, menu, menu avatar) para ser possível substituir toda a implementação de cada parte da topbar.
 - [x] Adicionar função de clique na logo
-- [ ] Adicionar linha/separador de itens de menu
+- [x] Adicionar linha/separador de itens de menu
 - [ ] Adicionar borda no menu referente a pagina atual (menu selecionado)
 - [ ] Adicionar gif de demonstração do componente
 - [ ] Publicar NPM
