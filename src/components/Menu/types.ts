@@ -1,3 +1,4 @@
+import { SeparatorProps } from "../SeparatorMenu/types";
 import { Submenu } from "../Submenu/types";
 
 interface MenuComponent {
@@ -6,7 +7,7 @@ interface MenuComponent {
 
 interface MenuItem {
   label: string;
-  submenu?: Submenu[];
+  submenu?: (Submenu | SeparatorProps)[];
   onClick?: () => void;
 }
 
@@ -35,7 +36,7 @@ export interface MenuOptions {
     fontWeight: string;
   };
 
-  items: MenuItem[];
+  items: (MenuItem | SeparatorProps)[];
 }
 
 export type MenuProps = MenuOptions | MenuComponent | null;

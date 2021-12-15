@@ -11,8 +11,16 @@ export const useMenuStyles = () => {
       color: ${(props) => props.hamburgerIconColor};
     }
 
+    div.separator-menu {
+      width: 220px;
+    }
+
     @media screen and (min-width: 961px) {
       height: 80%;
+
+      div.separator-menu {
+        display: none;
+      }
 
       svg#hamburger-icon {
         display: none;

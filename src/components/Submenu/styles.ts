@@ -42,6 +42,11 @@ export const useSubmenuStyles = () => {
         display: none;
       }
 
+      div.separator-menu {
+        display: block;
+        width: 80%;
+      }
+
       li {
         width: auto;
         font-size: ${(props) => props.fontSize} !important;

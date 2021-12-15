@@ -1,3 +1,5 @@
+import { SeparatorProps } from "../SeparatorMenu/types";
+
 interface UserMenuComponent {
   wrapper: React.ReactNode;
 }
@@ -22,7 +24,7 @@ export interface UserMenuOptions {
     fontWeight: string;
   };
 
-  items: UserMenuItem[];
+  items: (UserMenuItem | SeparatorProps)[];
 }
 
 export type UserMenuProps = UserMenuOptions | UserMenuComponent | null;

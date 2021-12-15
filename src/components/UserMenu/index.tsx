@@ -2,6 +2,7 @@ import React from "react";
 
 import { ReactComponent as AvatarIcon } from "../../assets/avatar-icon.svg";
 import { ReactComponent as ChevronIcon } from "../../assets/chevron-down-icon.svg";
+import { SeparatorMenu } from "../SeparatorMenu";
 import { useUserMenuStyles } from "./styles";
 import { UserMenuOptions, UserMenuProps } from "./types";
 
@@ -24,11 +25,15 @@ const UserMenuContainer: React.FC<UserMenuOptions> = ({
         <TriangleIcon {...menuStyle} />
 
         <List {...menuStyle}>
-          {items.map((item, index) => (
-            <ListItem key={index} onClick={item.onClick} {...menuStyle}>
-              {item.label}
-            </ListItem>
-          ))}
+          {items.map((item, index) =>
+            "separator" in item ? (
+              <SeparatorMenu {...item} />
+            ) : (
+              <ListItem key={index} onClick={item.onClick} {...menuStyle}>
+                {item.label}
+              </ListItem>
+            )
+          )}
         </List>
       </Menus>
     </Container>

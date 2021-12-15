@@ -5,10 +5,12 @@ import { ReactComponent as ArrowRightIcon } from "../../assets/arrow-right-icon.
 
 import { useSubmenuStyles } from "./styles";
 import { Submenu } from "./types";
+import { SeparatorMenu } from "../SeparatorMenu";
+import { SeparatorProps } from "../SeparatorMenu/types";
 
 interface Props {
   id: string;
-  data: Submenu[];
+  data: (Submenu | SeparatorProps)[];
   show: boolean;
   closeMenu: () => void;
   closeSubmenu: () => void;
@@ -44,11 +46,15 @@ export const SubmenuComponent: React.FC<Props> = ({
         <HeaderText>{id}</HeaderText>
       </Header>
 
-      {data.map((item, index) => (
-        <SubmenuItem key={index} onClick={item.onClick}>
-          {item.label}
-        </SubmenuItem>
-      ))}
+      {data.map((item, index) =>
+        "separator" in item ? (
+          <SeparatorMenu {...item} />
+        ) : (
+          <SubmenuItem key={index} onClick={item.onClick}>
+            {item.label}
+          </SubmenuItem>
+        )
+      )}
     </SubmenuList>
   );
 };

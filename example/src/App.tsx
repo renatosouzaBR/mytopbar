@@ -51,9 +51,14 @@ export const App: React.FC = () => {
         items: [
           {
             label: "Cadastros",
-            submenu: [{ label: "Clientes" }, { label: "Produtos" }],
+            submenu: [
+              { label: "Clientes" },
+              { separator: true },
+              { label: "Produtos" },
+            ],
           },
           { label: "Financeiro" },
+          { separator: true },
           { label: "Estoque" },
         ],
       }}
@@ -73,6 +78,7 @@ export const App: React.FC = () => {
         },
         items: [
           { label: "Configurações", onClick: () => console.log("clicou") },
+          { separator: true },
           { label: "Perfil", onClick: () => console.log("clicou") },
           { label: "Sair", onClick: () => console.log("clicou") },
         ],

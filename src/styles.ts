@@ -12,8 +12,8 @@ export const MyTopbarStyles = {
     box-shadow: 2px 0 4px rgba(0, 0, 0, 0.25);
 
     @media screen and (max-width: 960px) {
-      ul#menu {
-        order: 0;
+      div#menu {
+        order: -1;
       }
 
       div#logo {

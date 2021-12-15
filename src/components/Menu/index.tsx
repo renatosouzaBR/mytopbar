@@ -7,6 +7,7 @@ import { ReactComponent as HamburgerIcon } from "../../assets/hamburger-icon.svg
 import { ReactComponent as CloseIcon } from "../../assets/close-icon.svg";
 import { ReactComponent as ArrowRightIcon } from "../../assets/arrow-right-icon.svg";
 import { SubmenuComponent } from "../Submenu";
+import { SeparatorMenu } from "../SeparatorMenu";
 
 const MenuContainer = (props: MenuOptions) => {
   const { Container, MenuList, MenuItem, MenuItemButton } = useMenuStyles();
@@ -25,29 +26,33 @@ const MenuContainer = (props: MenuOptions) => {
       <MenuList show={showMenu} {...props.responsiveMenuStyle}>
         <CloseIcon id="close-icon" onClick={handleOpenCloseMenu} />
 
-        {props.items.map((item, index) => (
-          <MenuItemButton key={index}>
-            <MenuItem
-              onClick={() => setSubmenuLabel(item.label)}
-              {...props.menuStyle}
-            >
-              {item.label}
-            </MenuItem>
+        {props.items.map((item, index) =>
+          "separator" in item ? (
+            <SeparatorMenu {...item} />
+          ) : (
+            <MenuItemButton key={index}>
+              <MenuItem
+                onClick={() => setSubmenuLabel(item.label)}
+                {...props.menuStyle}
+              >
+                {item.label}
+              </MenuItem>
 
-            {item.submenu && <ArrowRightIcon />}
+              {item.submenu && <ArrowRightIcon />}
 
-            {item.submenu && (
-              <SubmenuComponent
-                submenuStyle={props.submenuStyle}
-                show={window.innerWidth > 960 || item.label === submenuLabel}
-                id={item.label}
-                data={item.submenu}
-                closeMenu={handleOpenCloseMenu}
-                closeSubmenu={() => setSubmenuLabel("")}
-              />
-            )}
-          </MenuItemButton>
-        ))}
+              {item.submenu && (
+                <SubmenuComponent
+                  submenuStyle={props.submenuStyle}
+                  show={window.innerWidth > 960 || item.label === submenuLabel}
+                  id={item.label}
+                  data={item.submenu}
+                  closeMenu={handleOpenCloseMenu}
+                  closeSubmenu={() => setSubmenuLabel("")}
+                />
+              )}
+            </MenuItemButton>
+          )
+        )}
       </MenuList>
     </Container>
   );
