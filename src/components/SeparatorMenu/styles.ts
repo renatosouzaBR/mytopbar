@@ -6,6 +6,6 @@ export const SeparatorMenuStyles = {
     width: 80%;
     background-color: ${(props) => (props.color ? props.color : "#e2e2e2")};
 
-    margin: 10px auto;
+    margin: 0 auto;
   `,
 };

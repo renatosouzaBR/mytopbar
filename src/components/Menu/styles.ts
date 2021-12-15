@@ -13,6 +13,7 @@ export const useMenuStyles = () => {
 
     div.separator-menu {
       width: 220px;
+      margin: 10px auto;
     }
 
     @media screen and (min-width: 961px) {
@@ -20,6 +21,7 @@ export const useMenuStyles = () => {
 
       div.separator-menu {
         display: none;
+        margin: 0 auto;
       }
 
       svg#hamburger-icon {
