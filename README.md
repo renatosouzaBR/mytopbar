@@ -234,7 +234,7 @@ export const App = () => {
 - [x] Adicionar props wrapper para cada componente (logo, menu, menu avatar) para ser possível substituir toda a implementação de cada parte da topbar.
 - [x] Adicionar função de clique na logo
 - [x] Adicionar linha/separador de itens de menu
-- [ ] Adicionar borda no menu referente a pagina atual (menu selecionado)
+- [x] Adicionar borda no menu referente a pagina atual (menu selecionado)
 - [ ] Adicionar gif de demonstração do componente
 - [ ] Publicar NPM
 - [ ] Adicionar responsividade ao menu avatar
