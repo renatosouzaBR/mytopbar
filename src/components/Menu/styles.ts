@@ -42,6 +42,7 @@ export const useMenuStyles = () => {
     background-color: ${(props) => props.bgColor};
 
     list-style-type: none;
+    z-index: 1000;
 
     position: absolute;
     top: 101%;
