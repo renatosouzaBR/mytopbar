@@ -109,25 +109,26 @@ export const App = () => {
       barOptions={{
         height: 60,
         maxWidth: 1366,
-        bgColor: "#37AD8C",
+        bgColor: "#FFF",
       }}
       /* Configuraçãp do menu principal */
       menuOptions={{
         /* Configuraçãp do menu e submenu com responsividae */
         responsiveMenuStyle: {
-          hamburgerIconColor: "#FFF",
-          bgColor: "#37AD8C",
-          closeButtonColor: "#FFF",
+          hamburgerIconColor: "rgb(64, 64, 64)",
+          bgColor: "#FFF",
+          closeButtonColor: "#c4c4c4",
           fontSize: "24px",
           fontWeight: "600",
-          textColor: "#FFF",
+          textColor: "rgb(64, 64, 64)",
         },
 
         /* Configuraçãp do submenu da barra principal sem responsividade */
         menuStyle: {
-          textColor: "#FFF",
+          textColor: "rgb(64, 64, 64)",
           fontWeight: "500",
-          fontSize: "15px",
+          fontSize: "16px",
+          selectedMenuColor: "#FA00FF",
         },
 
         /* Configuraçãp do menu da barra principal sem responsividade */
@@ -136,35 +137,41 @@ export const App = () => {
           fontSize: "14px",
           fontWeight: "500",
           textColor: "rgb(64, 64, 64)",
-          hoverBorderLeftColor: "#37AD8C",
+          hoverBorderLeftColor: "rgb(64, 64, 64)",
           hoverColor: "rgba(0, 0, 0, 0.05)",
         },
 
         items: [
           {
             label: "Cadastros",
-            submenu: [{ label: "Clientes" }, { label: "Produtos" }],
+            submenu: [
+              { label: "Clientes" },
+              { separator: true },
+              { label: "Produtos" },
+            ],
           },
           { label: "Financeiro" },
+          { separator: true },
           { label: "Estoque" },
         ],
       }}
       /* Configuração do menu opções de avatar */
       userMenuOptions={{
         avatarStyle: {
-          buttonColor: "#FFF",
-          buttonBorderColor: "#FFF",
+          buttonColor: "#FA00FF",
+          buttonBorderColor: "#FA00FF",
         },
         menuStyle: {
           bgColor: "#FFF",
           hoverColor: "rgba(0, 0, 0, 0.05)",
-          hoverBorderLeftColor: "#37AD8C",
+          hoverBorderLeftColor: "rgb(64, 64, 64)",
           textColor: "#363636",
           fontSize: "12px",
           fontWeight: "400",
         },
         items: [
           { label: "Configurações", onClick: () => console.log("clicou") },
+          { separator: true },
           { label: "Perfil", onClick: () => console.log("clicou") },
           { label: "Sair", onClick: () => console.log("clicou") },
         ],
@@ -200,6 +207,7 @@ export const App = () => {
 |                                    | menuStyle > 960px           | fontSize             | Tamanho do texto do item de menu                                                     |
 |                                    |                             | fontWeight           | Peso do texto do item de menu                                                        |
 |                                    |                             | textColor            | Cor do texto do item de menu                                                         |
+|                                    |                             | selectedMenuColor    | Cor da borda inferior para o menu selecionado                                        |
 |                                    | submenuStyle > 960px        | bgColor              | Cor de fundo de submenu                                                              |
 |                                    |                             | fontSize             | Tamanho do texto do item de submenu                                                  |
 |                                    |                             | fontWeight           | Peso do texto do item de submenu                                                     |
