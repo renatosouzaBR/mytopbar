@@ -252,7 +252,7 @@ export const App = () => {
 - [x] Adicionar linha/separador de itens de menu
 - [x] Adicionar borda no menu referente a pagina atual (menu selecionado)
 - [x] Adicionar gif de demonstração do componente
-- [ ] Publicar NPM
+- [x] Publicar NPM
 - [ ] Adicionar responsividade ao menu avatar
 - [ ] Adicionar testes
 
