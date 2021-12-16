@@ -53,14 +53,17 @@ export const App: React.FC = () => {
           {
             label: "Cadastros",
             submenu: [
-              { label: "Clientes" },
+              {
+                label: "Clientes",
+                onClick: () => console.log("Cadastro de clientes"),
+              },
               { separator: true },
               { label: "Produtos" },
             ],
           },
-          { label: "Financeiro" },
+          { label: "Financeiro", onClick: () => console.log("Financeiro") },
           { separator: true },
-          { label: "Estoque" },
+          { label: "Estoque", onClick: () => console.log("Estoque") },
         ],
       }}
       /* Configuração do menu opções de avatar */

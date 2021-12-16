@@ -26,6 +26,12 @@ const MenuContainer = (props: MenuOptions) => {
     return newText;
   }
 
+  function onHandleClick(label: string, onClick?: () => void) {
+    setSubmenuLabel(label);
+
+    if (onClick) onClick();
+  }
+
   return (
     <Container id="menu" {...props.responsiveMenuStyle}>
       <HamburgerIcon id="hamburger-icon" onClick={handleOpenCloseMenu} />
@@ -39,7 +45,7 @@ const MenuContainer = (props: MenuOptions) => {
           ) : (
             <MenuItemButton key={index}>
               <MenuItem
-                onClick={() => setSubmenuLabel(item.label)}
+                onClick={() => onHandleClick(item.label, item.onClick)}
                 className={
                   window.location.href.includes(
                     lowerAndRemoveSpecialCaracter(item.label)

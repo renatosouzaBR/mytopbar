@@ -36,6 +36,7 @@ export const useUserMenuStyles = () => {
     position: absolute;
     top: 100%;
     right: 0;
+    z-index: 999;
 
     display: none;
     flex-direction: column;
