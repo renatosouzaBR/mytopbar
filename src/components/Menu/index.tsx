@@ -19,6 +19,13 @@ const MenuContainer = (props: MenuOptions) => {
     setShowMenu((value) => !value);
   }
 
+  function lowerAndRemoveSpecialCaracter(text: string) {
+    let newText = text.toLowerCase();
+    if (!!newText) newText = newText.replace(/^[a-zA-Z]*\s/g, "");
+
+    return newText;
+  }
+
   return (
     <Container id="menu" {...props.responsiveMenuStyle}>
       <HamburgerIcon id="hamburger-icon" onClick={handleOpenCloseMenu} />
@@ -33,6 +40,13 @@ const MenuContainer = (props: MenuOptions) => {
             <MenuItemButton key={index}>
               <MenuItem
                 onClick={() => setSubmenuLabel(item.label)}
+                className={
+                  window.location.href.includes(
+                    lowerAndRemoveSpecialCaracter(item.label)
+                  )
+                    ? "selected-menu"
+                    : ""
+                }
                 {...props.menuStyle}
               >
                 {item.label}

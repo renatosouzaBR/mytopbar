@@ -109,6 +109,7 @@ export const useMenuStyles = () => {
     @media screen and (min-width: 961px) {
       width: auto;
       height: 100%;
+      padding: 0 10px;
 
       :hover {
         ul {
@@ -135,7 +136,11 @@ export const useMenuStyles = () => {
       color: ${(props) => props.textColor} !important;
 
       width: auto;
-      padding: 4px 10px;
+      padding: 6px 2px;
+
+      &.selected-menu {
+        border-bottom: 1px solid #fff;
+      }
     }
   `;
 
