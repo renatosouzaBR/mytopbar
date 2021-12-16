@@ -1,6 +1,6 @@
 {
   "name": "mytopbar",
-  "version": "1.3.2",
+  "version": "1.3.3",
   "description": "Topbar customizavel para lançamento rapido",
   "license": "MIT",
   "main": "lib/index.js",
