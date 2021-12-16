@@ -17,25 +17,26 @@ export const App: React.FC = () => {
       barOptions={{
         height: 60,
         maxWidth: 1366,
-        bgColor: "#37AD8C",
+        bgColor: "#FFF",
       }}
       /* Configuraçãp do menu principal */
       menuOptions={{
         /* Configuraçãp do menu e submenu com responsividae */
         responsiveMenuStyle: {
-          hamburgerIconColor: "#FFF",
-          bgColor: "#37AD8C",
-          closeButtonColor: "#FFF",
+          hamburgerIconColor: "rgb(64, 64, 64)",
+          bgColor: "#FFF",
+          closeButtonColor: "#c4c4c4",
           fontSize: "24px",
           fontWeight: "600",
-          textColor: "#FFF",
+          textColor: "rgb(64, 64, 64)",
         },
 
         /* Configuraçãp do submenu da barra principal sem responsividade */
         menuStyle: {
-          textColor: "#FFF",
+          textColor: "rgb(64, 64, 64)",
           fontWeight: "500",
-          fontSize: "15px",
+          fontSize: "16px",
+          selectedMenuColor: "#FA00FF",
         },
 
         /* Configuraçãp do menu da barra principal sem responsividade */
@@ -44,7 +45,7 @@ export const App: React.FC = () => {
           fontSize: "14px",
           fontWeight: "500",
           textColor: "rgb(64, 64, 64)",
-          hoverBorderLeftColor: "#37AD8C",
+          hoverBorderLeftColor: "rgb(64, 64, 64)",
           hoverColor: "rgba(0, 0, 0, 0.05)",
         },
 
@@ -65,13 +66,13 @@ export const App: React.FC = () => {
       /* Configuração do menu opções de avatar */
       userMenuOptions={{
         avatarStyle: {
-          buttonColor: "#FFF",
-          buttonBorderColor: "#FFF",
+          buttonColor: "#FA00FF",
+          buttonBorderColor: "#FA00FF",
         },
         menuStyle: {
           bgColor: "#FFF",
           hoverColor: "rgba(0, 0, 0, 0.05)",
-          hoverBorderLeftColor: "#37AD8C",
+          hoverBorderLeftColor: "rgb(64, 64, 64)",
           textColor: "#363636",
           fontSize: "12px",
           fontWeight: "400",

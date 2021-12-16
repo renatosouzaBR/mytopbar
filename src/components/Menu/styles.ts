@@ -123,6 +123,7 @@ export const useMenuStyles = () => {
     textColor: string;
     fontSize: string;
     fontWeight: string;
+    selectedMenuColor: string;
   }>`
     padding: 10px 20px;
     flex-direction: row;
@@ -139,7 +140,7 @@ export const useMenuStyles = () => {
       padding: 6px 2px;
 
       &.selected-menu {
-        border-bottom: 1px solid #fff;
+        border-bottom: 1px solid ${(props) => props.selectedMenuColor};
       }
     }
   `;

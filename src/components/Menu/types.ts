@@ -16,6 +16,7 @@ export interface MenuOptions {
     textColor: string;
     fontSize: string;
     fontWeight: string;
+    selectedMenuColor: string;
   };
 
   submenuStyle: {
